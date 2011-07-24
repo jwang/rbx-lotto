@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
    
     if !@entry.save
-      render :action => "new"
+      redirect_to(root_path, :notice => "Sorry, only 1 entry per name is allowed. Don't be evil.")
     else
       redirect_to(root_path, :notice => 'Thanks for Entering the RBX Lottery!')
     end
@@ -20,9 +20,6 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
-    #if @profile.nil?
-    #  redirect_to :action => "new"
-    #end
   end
   
 end
