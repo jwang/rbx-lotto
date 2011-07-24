@@ -22,4 +22,9 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
   end
   
+  def pick
+    winner = Entry.pick_winner
+    redirect_to(root_path, :notice => "Winner is #{winner.name}")
+  end
+  
 end

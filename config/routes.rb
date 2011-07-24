@@ -5,6 +5,9 @@ Rbxlotto::Application.routes.draw do
   devise_for :users
 
   get "home/index"
+  
+  match "entries/pick" => "entries#pick"
+  
   root :to => 'home#index'
   
   # The priority is based upon order of creation:
