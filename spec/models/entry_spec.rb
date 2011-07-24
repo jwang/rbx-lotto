@@ -26,13 +26,19 @@ describe Entry do
     Entry.winners.count.should_not eql(0)
   end
   
-  it "can pick winners" do
+  it "can pick winners if prizes exist" do
+    prize = Factory.create(:prize)
     winner = Entry.pick_winner
     winner.should_not be_nil
     Entry.winners.should_not include(winner)
     winner.won = true
     winner.save
     Entry.winners.should include(winner)
+  end
+  
+  it "cannot pick winners if no prizes exist" do
+    winner = Entry.pick_winner
+    winner.should be_nil    
   end
   
 end
