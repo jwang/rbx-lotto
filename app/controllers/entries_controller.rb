@@ -24,6 +24,8 @@ class EntriesController < ApplicationController
   
   def pick
     winner = Entry.pick_winner
+    winner.won = true
+    winner.save
     redirect_to(root_path, :notice => "Winner is #{winner.name}")
   end
   
