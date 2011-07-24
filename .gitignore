@@ -3,6 +3,7 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
+*rbc
 
 .DS_Store
 Icon?
