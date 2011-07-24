@@ -23,4 +23,13 @@ describe Prize do
     prize.should_not be_valid
   end
   
+  it "should have one less amount after it is handed out" do
+    [1,2,3].each do |i|
+      entry = Factory.create(:entry, :name => "john #{i}")
+    end
+    @prize.amount.should eql(1)
+    @prize.pick_winner
+    @prize.amount.should eql(0)
+  end
+  
 end

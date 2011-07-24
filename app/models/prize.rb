@@ -4,4 +4,13 @@ class Prize < ActiveRecord::Base
   
   scope :remaining, where("amount > 0")
   
+  def pick_winner
+    if self.amount > 0
+      winner = Entry.pick_winner
+      self.amount -= 1
+      self.save
+      winner
+    end
+  end
+  
 end

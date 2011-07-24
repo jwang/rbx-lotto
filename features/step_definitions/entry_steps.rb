@@ -9,6 +9,10 @@ Given /^I have entries$/ do
   end
 end
 
+Given /^I have no more prizes$/ do
+  Prize.remaining.count.should eql(0)
+end
+
 Given /^I have prizes$/ do
   @prize = Factory.create(:prize)
   Prize.count.should > 0
