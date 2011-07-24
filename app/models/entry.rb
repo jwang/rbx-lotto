@@ -8,10 +8,10 @@ class Entry < ActiveRecord::Base
   
   
   def self.pick_winner
-    #offset = rand(Entry.count)
-    #rand_record = Entry.first(:offset => offset)
-    #Thing.first(:offset => rand(Thing.count))
-    # Rails 3
-    self.offset(rand(Entry.current.count)).first
+    if Prize.remaining.size > 0
+      self.offset(rand(Entry.current.count)).first
+    else
+      nil
+    end
   end
 end
