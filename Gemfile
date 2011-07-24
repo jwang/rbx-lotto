@@ -25,5 +25,12 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem "cucumber-rails", :group => [:development, :test]
+gem "database_cleaner", :group => [:development, :test]
+
 gem "capybara", :group => [:development, :test]
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
+gem "shoulda-matchers", :group => [:development, :test]
+gem 'factory_girl_rails', :group => [:development, :test]
+
+gem 'devise'
+gem 'cancan'
