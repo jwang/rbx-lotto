@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: rbxlotto_development
   pool: 5
-  username: rbxlotto
+  username: postgres
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,7 +43,7 @@ test: &test
   encoding: unicode
   database: rbxlotto_test
   pool: 5
-  username: rbxlotto
+  username: postgrse
   password:
 
 production:
@@ -51,7 +51,7 @@ production:
   encoding: unicode
   database: rbxlotto_production
   pool: 5
-  username: rbxlotto
+  username: postgres
   password:
 
 cucumber:
