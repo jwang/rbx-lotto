@@ -1,12 +1,16 @@
+<header class='grid_12'>
 <h1>Aloha.rb Presents</h1>
-<h2>The Rubinius Lottery</h2>
 
-<%= form_for :entry, :url => entries_path do |f| %>
-  <%= f.label :name, 'Name' %><br/>
-  <%= f.text_field :name %>
-  <%= f.submit 'Enter' %>
-<% end %>
-
+<h2><%= image_tag "rubinius.png", :title => "Rubinius", :class => "logo" %> Lottery</h2>
+</header>
+<section id="entry_form" class='grid_12'>
+  <h2>Enter to Win!</h2>
+  <%= form_for :entry, :url => entries_path do |f| %>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name, :size => 40 %>
+    <%= f.submit "Enter", :class => "enter red large awesome" %>
+  <% end %>
+</section>
 
 <% if current_user && current_user.admin? %>
 <%= form_for :winner, :url => entries_pick_path do |f| %>
@@ -18,5 +22,21 @@
 <% end %>
 
 <% end %>
-  
-  
+<div class="clear"></div>
+<section class='grid_12'>
+  <section id="about">
+     <h4>About the project</h4>
+     <p>This is a simple web app written with Rails 3.1 using Rubinius 1.2.4 and deployed on Engine Yard's AppCloud platform. We used RSpec, Cucumber, Shoulda and Factory_Girl for testing the app.</p>
+     <p>It was created for a presentation at <%= link_to "aloha.rb", "http://www.aloharb.org" %> to show Rubinius, Rails 3.1 and deployment on AppCloud.</p>
+  <section>
+  <p>This super awesome web app is currently hosted on <%= link_to "Engine Yard AppCloud", "https://cloud.engineyard.com" %> using <%= link_to "Rubinius", "http://rubini.us" %> and Passenger 3.</p>
+  <p>It was created for the <%= link_to "aloha.rb", "http://www.aloharb.org" %> group and the source is available on the <%= link_to "GitHub", "https://www.github.com/aloharb/rbx-lotto"%>.</p>
+</section>
+<div class="clear"></div>
+<section id="mahalo" class='grid_12 alpha'>
+  <h3>Huge Mahalo</h3>
+  <p>Many a Thanks to the Rubinius team and <%= link_to "Shane Becker", "https://twitter.com/veganstraightedge" %> for the awesome prizes to for the lottery.</p>
+<section>
+<div class="clear"></div>
+
+

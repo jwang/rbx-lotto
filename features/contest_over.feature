@@ -19,5 +19,8 @@ Feature: Contest over
     When I go to the home page
     Then I should see "Sorry, no more prizes to hand out."
   
-  
+#  Scenario: Attendees can't pick winners
+#    Given I am an attendee
+#    When I go to the home page
+#    Then I should not see "Pick a winner" button
   
