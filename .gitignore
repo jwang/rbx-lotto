@@ -23,3 +23,5 @@ tmtags
 *.un~
 Session.vim
 
+
+/config/database.yml
