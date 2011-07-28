@@ -7,12 +7,16 @@ gem 'rails', '3.1.0.rc5'
 
 gem 'pg'
 gem 'mysql2'
+gem 'thin'
 
 # Asset template engines
 gem 'json'
-gem 'sass-rails', "~> 3.1.0.rc"
-gem 'coffee-script'
-gem 'uglifier'
+
+group :assets do
+  gem 'sass-rails', "~> 3.1.0.rc"
+  gem 'coffee-script'
+  gem 'uglifier'
+end
 
 gem 'jquery-rails'
 
@@ -37,3 +41,7 @@ end
 gem 'devise'
 gem 'cancan'
 #gem "html5-boilerplate"
+
+#group :production do
+#  gem 'therubyracer-heroku', '0.8.1.pre3'
+#end
