@@ -43,7 +43,7 @@ test: &test
   encoding: unicode
   database: rbxlotto_test
   pool: 5
-  username: postgrse
+  username: postgres
   password:
 
 production:
